@@ -1,0 +1,29 @@
+version: '2'
+services:
+  selenium:
+    depends_on:
+      - web
+      - db
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
+    restart: always
+    links:
+      - web:webserver
+  web:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
+    links:
+      - db:database 
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: oophoNil9Lei
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: myapp
+      MYSQL_PASSWORD: oeGe5Veph1ea
