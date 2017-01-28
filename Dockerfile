@@ -11,4 +11,7 @@ COPY vendor $APP_ROOT/vendor
 COPY web $APP_ROOT/web
 
 RUN . $APACHE_ENVVARS \
-  && chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP $APP_ROOT \
+	&& chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP $APP_ROOT
+
+RUN a2enmod rewrite \
+	&& docker-php-ext-install pdo pdo_mysql
