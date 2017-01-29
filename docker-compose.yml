@@ -13,12 +13,17 @@ services:
   web:
     depends_on:
       - db
-    build: .
+    build: ./docker/webserver/
     ports:
       - "8080:80"
     restart: always
     links:
-      - db:database 
+      - db:database
+    environment:
+      MYSQL_ROOT_PASSWORD: oophoNil9Lei
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: myapp
+      MYSQL_PASSWORD: oeGe5Veph1ea
   db:
     image: mysql:5.7
     restart: always

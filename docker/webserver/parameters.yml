@@ -1,0 +1,11 @@
+parameters:
+    database_host: databse
+    database_port: null
+    database_name: myapp
+    database_user: myapp
+    database_password: oeGe5Veph1ea
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: aithah6Eigh2Hoomek2OdaiKefohj5ve
